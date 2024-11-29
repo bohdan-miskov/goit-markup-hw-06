@@ -483,6 +483,16 @@ address {
     padding: 72px 0;
 }
 
+@media (min-resolution:192dpi)
+{
+    .main-page{
+        background-image: linear-gradient(
+        rgba(46, 47, 66, 0.7), 
+        rgba(46, 47, 66, 0.7)),
+         url(../images/people-office-2x.jpg);
+    }
+}
+
 @media only screen and (min-width: 768px) {
     .main-page {
         padding: 112px 0;
