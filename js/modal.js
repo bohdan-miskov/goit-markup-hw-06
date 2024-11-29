@@ -25,10 +25,10 @@
       mobileMenu: document.querySelector("[data-mobileMenu]"),
     };
   
-    refsMobileMenu.openMobileMenuBtn.addEventListener("click", toggleModal);
-    refsMobileMenu.closeMobileMenuBtn.addEventListener("click", toggleModal);
+    refsMobileMenu.openMobileMenuBtn.addEventListener("click", toggleMobileMenu);
+    refsMobileMenu.closeMobileMenuBtn.addEventListener("click", toggleMobileMenu);
   
-    function toggleModal() {
+    function toggleMobileMenu() {
       // is-open це клас який буде додаватися/забиратися на бекдроп при натисканні на кнопки
       refsMobileMenu.mobileMenu.classList.toggle("is-open");
     }
