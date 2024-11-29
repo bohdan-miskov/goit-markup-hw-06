@@ -15,4 +15,21 @@
       // is-open це клас який буде додаватися/забиратися на бекдроп при натисканні на кнопки
       refs.modal.classList.toggle("is-open");
     }
+
+    const refsMobileMenu = {
+      // Додати атрибут data-mobileMenu-open на кнопку відкриття
+      openMobileMenuBtn: document.querySelector("[data-mobileMenu-open]"),
+      // Додати атрибут data-mobileMenu-close на кнопку закриття
+      closeMobileMenuBtn: document.querySelector("[data-mobileMenu-close]"),
+      // Додати атрибут data-mobileMenu на бекдроп модалки
+      mobileMenu: document.querySelector("[data-mobileMenu]"),
+    };
+  
+    refsMobileMenu.openMobileMenuBtn.addEventListener("click", toggleModal);
+    refsMobileMenu.closeMobileMenuBtn.addEventListener("click", toggleModal);
+  
+    function toggleModal() {
+      // is-open це клас який буде додаватися/забиратися на бекдроп при натисканні на кнопки
+      refsMobileMenu.mobileMenu.classList.toggle("is-open");
+    }
   })();
