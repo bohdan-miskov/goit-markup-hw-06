@@ -478,9 +478,9 @@ address {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    max-width: 100%;
     margin: 0 auto;
     padding: 72px 0;
+    max-width: 320x;
 }
 
 @media only screen and (max-width: 767px) {
@@ -492,6 +492,7 @@ address {
             rgba(46, 47, 66, 0.7), 
             rgba(46, 47, 66, 0.7)),
              url(../images/main-images/mobile-people-office@2x.jpg);
+             
         }
     }
 }
@@ -502,6 +503,7 @@ address {
         rgba(46, 47, 66, 0.7), 
         rgba(46, 47, 66, 0.7)),
          url(../images/main-images/tablet-people-office.jpg);
+         max-width: 768px;
     }
 
    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -521,6 +523,7 @@ address {
         rgba(46, 47, 66, 0.7), 
         rgba(46, 47, 66, 0.7)),
          url(../images/main-images/computer-people-office.jpg);
+         max-width: 1440px;
     }
 
    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
@@ -690,6 +693,7 @@ address {
 .portfolio-item{
     max-width: 288px;
     transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 } 
 
 @media only screen and (min-width: 768px) {
@@ -701,22 +705,15 @@ address {
 @media only screen and (min-width: 1158px) {
     .portfolio-item{
         max-width: calc((100% - 24px * 2) / 3);
+        box-shadow: none;
     } 
-}
-
-@media (hover: hover)
-{
+   
     .portfolio-item:hover{
         box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
     }
+
 }
 
-@media not (hover: hover)
-{
-    .portfolio-item:active{
-        box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
-    }
-}
 
 .portfolio-img-container {
     position: relative;
@@ -781,7 +778,6 @@ address {
         flex-direction: row;
         text-align: start;
         column-gap:24px;
-        justify-content: center;
         align-items: start;
     }
 }
@@ -789,6 +785,8 @@ address {
 @media only screen and (min-width: 768px) and (max-width: 1157px) {
     .footer-container{ 
         flex-wrap: wrap;
+        justify-content: start;
+        padding: 0 108px;
     }
 }
 
@@ -891,6 +889,7 @@ address {
 @media only screen and (min-width: 768px) {
     .subscribe-email-input {
         margin-bottom: 0;
+        width: 264px;
     }
 }
 
@@ -1094,6 +1093,11 @@ address {
     display: inline-block;
 }
 
+.modal-checkbox-label{
+    display: flex;
+    align-items: center;
+}
+
 .modal-checkbox-mark{
     fill: transparent;
     width: 16px;
@@ -1106,7 +1110,7 @@ address {
     align-items: center;
     transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
     transition-property: background-color, border, fill;
-
+    flex-shrink: 0;
 }
 
 .modal-form-checkbox:checked + .modal-form-label > .modal-checkbox-mark{
@@ -1154,18 +1158,17 @@ address {
     display: none;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
    
 .mobile-menu {
     display: block;
-    max-width: 320px;
-    min-height: 640px;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
     background: #fff;
-    padding: 72px 16px 40px 16px;
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-100%, -50%);
+    transform: translateX(-100%);
     z-index: 999;
     visibility: hidden;
     pointer-events: none;
@@ -1174,19 +1177,28 @@ address {
     transition-property: opacity, visibility, transform;
 }
 
+.mobile-menu-container{
+    position: relative;
+    padding-top: 72px;
+    padding-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
 .mobile-menu.is-open{
     visibility:visible;
     pointer-events:auto;
     opacity: 1;
-    transform: translate(-50%, -50%);
+    transform: translateX(0);
 }
 
 .mobile-menu-close-btn {
     background-color:  #e7e9fc;
 }
 
-.mobile-menu-list {
-    margin-bottom: 168px;
+.mobile-menu-nav {
+    margin-bottom: auto;
 }
 
 .mobile-menu-item:not(:last-child) {
@@ -1204,12 +1216,16 @@ address {
     color: #404bbf
 }
 
-.mobile-menu-contact-list {
+.mobile-menu-contact-address {
     margin-bottom: 48px;
 }
 
 .mobile-contact-item:not(:last-child) {
     margin-bottom: 24px;
+}
+
+.mobile-contact-item:nth-child(1) .mobile-contact-link {
+    color: #4d5ae5;
 }
 
 .mobile-contact-link {
@@ -1225,7 +1241,7 @@ address {
     .mobile-menu-link:focus,
     .mobile-contact-link:hover,
     .mobile-contact-link:focus {
-            color: #4d5ae5
+            color: #4d5ae5;
     }
 }
 
