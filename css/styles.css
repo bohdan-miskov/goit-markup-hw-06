@@ -480,13 +480,16 @@ address {
 }
 
 @media only screen and (max-width: 767px) {
-    .main-page{
-    background-image: linear-gradient(
-        rgba(46, 47, 66, 0.7), 
-        rgba(46, 47, 66, 0.7)),
-         url(../images/main-images/mobile-people-office.jpg);
+    @media (min-device-pixel-ratio: 1), (min-resolution: 96dpi), (min-resolution: 1dppx)
+    {
+        .main-page{
+        background-image: linear-gradient(
+            rgba(46, 47, 66, 0.7), 
+            rgba(46, 47, 66, 0.7)),
+            url(../images/main-images/mobile-people-office.jpg);
+        }
     }
-    
+
     @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)
     {
         
@@ -501,13 +504,16 @@ address {
 }
 
 @media only screen and (min-width: 768px) {
-    .main-page{
-        background-image: linear-gradient(
-        rgba(46, 47, 66, 0.7), 
-        rgba(46, 47, 66, 0.7)),
-         url(../images/main-images/tablet-people-office.jpg);
-         max-width: 768px;
-    }
+    
+    @media (min-device-pixel-ratio: 1), (min-resolution: 96dpi), (min-resolution: 1dppx){
+        .main-page{
+            background-image: linear-gradient(
+            rgba(46, 47, 66, 0.7), 
+            rgba(46, 47, 66, 0.7)),
+            url(../images/main-images/tablet-people-office.jpg);
+            max-width: 768px;
+        }
+    }   
 
    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
     .main-page{
@@ -521,12 +527,14 @@ address {
 
 @media only screen and (min-width: 1158px) {
 
-    .main-page{
-        background-image: linear-gradient(
-        rgba(46, 47, 66, 0.7), 
-        rgba(46, 47, 66, 0.7)),
-         url(../images/main-images/computer-people-office.jpg);
-         max-width: 1440px;
+    @media (min-device-pixel-ratio: 1), (min-resolution: 96dpi), (min-resolution: 1dppx){
+        .main-page{
+            background-image: linear-gradient(
+            rgba(46, 47, 66, 0.7), 
+            rgba(46, 47, 66, 0.7)),
+            url(../images/main-images/computer-people-office.jpg);
+            max-width: 1440px;
+        }
     }
 
    @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
